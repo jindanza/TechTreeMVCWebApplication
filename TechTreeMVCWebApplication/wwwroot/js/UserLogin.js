@@ -41,6 +41,8 @@
                 }
             },
             error: function (xhr, ajaxOptions, thrownError) {
+                var errorText = "Status: " + xhr.status + " - " + xhr.statusText;
+                PresentCloseableBootstrapAlert("#alert_placeholder_login", "danger", "Error!", errorText);
                 console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }
         });
