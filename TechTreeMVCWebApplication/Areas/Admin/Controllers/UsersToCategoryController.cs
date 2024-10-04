@@ -59,7 +59,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                 {
                     _context.RemoveRange(usersSelectedForCategoryToDelete);
                     await _context.SaveChangesAsync();
-                    if (usersSelectedForCategoryToDelete != null)
+                    if (usersSelectedForCategoryToAdd != null)
                     {
                         _context.AddRange(usersSelectedForCategoryToAdd);
                         await _context.SaveChangesAsync();

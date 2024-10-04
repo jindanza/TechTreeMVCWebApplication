@@ -13,5 +13,5 @@
 }
 
 function CloseAlert(placeHolderElemId) {
-    $(placeHolderElemId).html(alertHtml)
+    $(placeHolderElemId).html("")
 }
