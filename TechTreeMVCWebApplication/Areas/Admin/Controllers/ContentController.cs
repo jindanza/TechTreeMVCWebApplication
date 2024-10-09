@@ -22,6 +22,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
             _context = context;
         }
 
+
         // GET: Admin/Content/Create
         public IActionResult Create(int categoryItemId, int categoryId)
         {
@@ -30,6 +31,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                 CategoryId = categoryId,
                 CatItemId = categoryItemId
             };
+
             return View(content);
         }
 
@@ -46,7 +48,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                 _context.Add(content);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index), "CategoryItem", new {categoryId = content.CategoryId});
+                return RedirectToAction(nameof(Index), "CategoryItem", new { categoryId = content.CategoryId });
             }
             return View(content);
         }
@@ -100,7 +102,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index), "CategoryItem", new {categoryId=content.CategoryId});
+                return RedirectToAction(nameof(Index), "CategoryItem", new { categoryId = content.CategoryId });
             }
             return View(content);
         }

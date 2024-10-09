@@ -26,6 +26,7 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
         // GET: Admin/CategoryItem
         public async Task<IActionResult> Index(int categoryId)
         {
+
             List<CategoryItem> list = await (from catItem in _context.CategoryItem
                                              join contentItem in _context.Content
                                              on catItem.Id equals contentItem.CategoryItem.Id
@@ -34,14 +35,16 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                                              where catItem.CategoryId == categoryId
                                              select new CategoryItem
                                              {
-                                                 Id = catItem.CategoryId,
+                                                 Id = catItem.Id,
                                                  Title = catItem.Title,
                                                  Description = catItem.Description,
                                                  DateTimeItemReleased = catItem.DateTimeItemReleased,
                                                  MediaTypeId = catItem.MediaTypeId,
                                                  CategoryId = categoryId,
                                                  ContentId = (subContent != null) ? subContent.Id : 0
+
                                              }).ToListAsync();
+
 
             ViewBag.CategoryId = categoryId;
 
@@ -76,6 +79,9 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
                 CategoryId = categoryId,
                 MediaTypes = mediaTypes.ConvertToSelectList(0)
             };
+
+
+
             return View(categoryItem);
         }
 
@@ -90,11 +96,11 @@ namespace TechTreeMVCWebApplication.Areas.Admin.Controllers
             {
                 _context.Add(categoryItem);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new {categoryId = categoryItem.CategoryId});
+                return RedirectToAction(nameof(Index), new { categoryId = categoryItem.CategoryId });
             }
-
             List<MediaType> mediaTypes = await _context.MediaType.ToListAsync();
             categoryItem.MediaTypes = mediaTypes.ConvertToSelectList(categoryItem.MediaTypeId);
+
 
             return View(categoryItem);
         }

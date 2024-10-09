@@ -1,4 +1,4 @@
-﻿@using TechTreeMVCWebApplication.Entities
+﻿
 @model IEnumerable<TechTreeMVCWebApplication.Entities.Category>
 
 @* Hero Section *@
@@ -16,29 +16,16 @@
 <div id="Courses" class="courses section">
     <h3 class="section-header">Courses</h3>
     @{
-        var count = Model.Count() / 4;
+        const int itemsPerRow = 4;
+
+        var count = Model.Count() / itemsPerRow;
         var catList = new List<Category>();
     }
     @for (int i = 0; i <= count; i++)
     {
-        catList = Model.Skip(i * 4).Take(4).ToList();
+        catList = Model.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
 
-        <div class="row mt-3">
-            @foreach (Category item in catList)
-            {
-                <div class="col-md-3">
-                    <a class="text-dark">
-                        <div class="card">
-                            <img src="@item.ThumbnailImagePath" alt="@item.Title" class="img-thumbnail" />
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Title</h5>
-                                <p class="card-text">@item.Description</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            }
-        </div>
+        <partial name="_DisplayCardRowPartial" model="catList"/>
     }
 </div>
 
