@@ -1,8 +1,8 @@
 # TechTreeMVCWebApplication
 
-TechTreeMVCWebApplication adalah aplikasi berbasis web yang dikembangkan menggunakan template **ASP.NET Core Web App (Model-View-Controller)**. Aplikasi ini menggunakan **SQL Server** sebagai sistem manajemen basis data.
+TechTreeMVCWebApplication is a web-based application developed using the **ASP.NET Core Web App (Model-View-Controller)** template. This application uses **SQL Server** as its database management system.
 
-## Teknologi yang Digunakan
+## Technologies Used
 
 - **ASP.NET Core MVC** (Model-View-Controller)
 - **C#**
@@ -10,25 +10,25 @@ TechTreeMVCWebApplication adalah aplikasi berbasis web yang dikembangkan menggun
 - **SQL Server**
 - **Bootstrap** (UI Styling)
 
-## Fitur
+## Features
 
-- CRUD (Create, Read, Update, Delete) untuk entitas utama
-- Autentikasi dan otorisasi menggunakan Identity
-- Implementasi area dan partial views
-- Pengelolaan database dengan Entity Framework Core
+- CRUD (Create, Read, Update, Delete) for main entities
+- Authentication and authorization using Identity
+- Implementation of areas and partial views
+- Database management with Entity Framework Core
 
-## Instalasi
+## Installation
 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/TechTreeMVCWebApplication.git
+git clone https://github.com/jindanza/TechTreeMVCWebApplication.git
 cd TechTreeMVCWebApplication
 ```
 
-### 2. Konfigurasi Database
+### 2. Configure Database
 
-Pastikan SQL Server telah terinstall dan berjalan, lalu perbarui **appsettings.json** sesuai konfigurasi database Anda:
+Ensure that SQL Server is installed and running, then update **appsettings.json** according to your database configuration:
 
 ```json
 "ConnectionStrings": {
@@ -36,42 +36,42 @@ Pastikan SQL Server telah terinstall dan berjalan, lalu perbarui **appsettings.j
 }
 ```
 
-### 3. Migrasi Database
+### 3. Apply Database Migrations
 
-Jalankan perintah berikut untuk melakukan migrasi database:
+Run the following command to apply database migrations:
 
 ```bash
 dotnet ef database update
 ```
 
-### 4. Menjalankan Aplikasi
+### 4. Run the Application
 
-Jalankan aplikasi dengan perintah berikut:
+Start the application using the following command:
 
 ```bash
 dotnet run
 ```
 
-Akses aplikasi melalui browser di **http://localhost:44377** (atau sesuai konfigurasi port Anda).
+Access the application through your browser at **http://localhost:44377** (or based on your configured port).
 
-## Struktur Folder
+## Folder Structure
 
 ```
 TechTreeMVCWebApplication/
-│-- Areas/          # Folder untuk Area
-│-- Comparers/      # Folder untuk Comparer
-│-- Controllers/    # Folder untuk Controller
-│-- Entities/       # Folder untuk Entities
-│-- Extensions/     # Folder untuk Extension
-│-- Interfaces/     # Folder untuk Interface
-│-- Models/         # Folder untuk Model
-│-- Properties/     # Folder untuk Property
-│-- Views/          # Folder untuk View
-│-- Data/           # Folder untuk konfigurasi database
-│-- wwwroot/        # Folder untuk aset statis (CSS, JS, dll.)
-│-- appsettings.json # Konfigurasi aplikasi
+│-- Areas/          # Folder for Areas
+│-- Comparers/      # Folder for Comparers
+│-- Controllers/    # Folder for Controllers
+│-- Entities/       # Folder for Entities
+│-- Extensions/     # Folder for Extensions
+│-- Interfaces/     # Folder for Interfaces
+│-- Models/         # Folder for Models
+│-- Properties/     # Folder for Properties
+│-- Views/          # Folder for Views
+│-- Data/           # Folder for database configurations
+│-- wwwroot/        # Folder for static assets (CSS, JS, etc.)
+│-- appsettings.json # Application configuration
 ```
 
-## Kontribusi
+## Contribution
 
-Jika ingin berkontribusi, silakan fork repository ini dan buat pull request.
+If you would like to contribute, please fork this repository and create a pull request.
